@@ -1,0 +1,24 @@
+<settings>
+	<!--SETTINGS-->
+	<setting key="filenameContacts" value="contacts.xml" />
+	<setting key="filenameSendModel" value="sendStrings.xml" />
+	<setting key="filenameEditModel" value="editStrings.xml" />
+	<setting key="filenameListModel" value="listStrings.xml" />
+	<setting key="geometryAppView" value="+300+160"/>
+	<setting key="geometrySendView" value="200x212"/>
+	<setting key="geometryEditView" value="202x152"/>
+	<setting key="geometryListView" value="214x226"/>
+	<!--STRINGS-->
+	<string key="applicationTitle" value="SMS" />
+	<string key="defaultStartView" value="Send"/>
+	<!--string key="welcomeMessageApp" value="FreeAPI SMS" /-->
+	<string key="messageTitleAbout" value="SMSAPI - About this app" />
+	<string key="messageAbout" value="HARD CODDED SORRY" />
+	<string key="messageTitleHelp" value="SMSAPI - Need help?" />
+	<string key="messageHelp" value="Phone a friend?" />
+	<string key="menuSend" value="Send" />
+	<string key="menuList" value="List" />
+	<string key="menuHelp" value="Help" />
+	<string key="menuAbout" value="About" />
+	<string key="menuQuit" value="Quit" />
+</settings>

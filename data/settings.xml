@@ -1,0 +1,44 @@
+<settings>
+	<setting key="apiurl" value="https://smsapi.free-mobile.fr/sendmsg?" />
+	<setting key="internetupip" value="http://212.27.40.200" />
+	<setting key="maxMessageLength" value="160" />
+	<setting key="defaultContactEnable" value="False" />
+	<setting key="maxNameLength" value="16" />
+	<setting key="defaultUserLength" value="8" />
+	<setting key="defaultCodeLength" value="14" />
+	<string key="applicationTitle" value="SMS" />
+	<string key="spinboxDefault" value="Choose contact..." />
+	<string key="buttonSend" value="Send" />
+	<string key="buttonClear" value="Clear" />
+	<string key="buttonAdd" value="Add" />
+	<string key="buttonEdit" value="Edit" />
+	<string key="buttonSave" value="Save" />
+	<string key="buttonCancel" value="Cancel" />
+	<string key="labelName" value="Name" />
+	<string key="labelUser" value="User" />
+	<string key="labelCode" value="Code" />
+	<string key="labelEnable" value="Enable" />
+	<string key="labelEnabled" value="Enabled" />
+	<string key="labelDisabled" value="Disabled" />
+	<string key="email" value="mr.mark.lewis@free.fr" />
+	<menu key="addContact" value="Add Contact" />
+	<menu key="undefined" value="undefined" />
+	<menu key="help" value="Help" />
+	<menu key="about" value="About" />
+	<menu key="quit" value="Quit" />
+	<feedback key="WelcomeMessage" value="FreeAPI SMS" />
+	<feedback key="EmptyMessageError" value="Empty message" />
+	<feedback key="LongMessageError" value="Message > 160 chars" />
+	<feedback key="EmptyContactError" value="Choose a contact" />
+	<feedback key="EnabledContactError" value="Unenabled contact" />
+	<feedback key="InternetDownError" value="No internet" />
+	<feedback key="SendAttempt" value="Sending message" />
+	<feedback key="SendError" value="Server Error" />
+	<feedback key="SendSuccess" value="Message sent" />
+	<feedback key="AddContactWelcomeMessage" value="Add new contact" />
+	<feedback key="ContactNotAddedError" value="Add contact error" />
+	<feedback key="ContactAddedSuccess" value="Contact Added" />
+	<feedback key="ContactNameError" value="Name length max = " />
+	<feedback key="ContactUserError" value="User length must be " />
+	<feedback key="ContactCodeError" value="Code length must be " />
+</settings>

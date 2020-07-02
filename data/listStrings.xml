@@ -1,0 +1,13 @@
+<settings>
+	<!--STRINGS-->
+	<string key="welcomeMessageList" value="List of contacts" />
+	<string key="labelEnabled" value="Enabled" />
+	<string key="labelDisabled" value="Disabled" />
+	<string key="buttonAdd" value="Add" />
+	<string key="buttonEdit" value="Edit" />
+	<string key="buttonDel" value="Delete" />
+	<string key="MessageTitleListSelectError" value="SMSAPI: No contact selected" />
+	<string key="MessageListSelectError" value="Please select a contact from one of the lists." />
+	<string key="MessageTitleConfirmDelete" value="SMSAPI - Confirm delete" />
+	<string key="MessageConfirmDelete" value="Are you sure you want to delete : " />
+</settings>

@@ -1,0 +1,22 @@
+<settings>
+	<!--STRINGS-->
+	<string key="welcomeMessageSend" value="Send Message" />
+	<string key="spinboxDefault" value="Choose contact..." />
+	<string key="spinboxEmpty" value="Please add a contact to list" />
+	<string key="buttonSend" value="Send" />
+	<string key="buttonClear" value="Clear" />
+	<string key="buttonReset" value="Reset" />
+	<string key="emptyMessageError" value="Empty message" />
+	<string key="longMessageError" value="Message > 160 chars" />
+	<string key="emptyContactError" value="Choose a contact" />
+	<string key="emptyContactListError" value="Please add a contact" />
+	<string key="enabledContactError" value="Contact not enabled" />
+	<string key="internetDownError" value="No internet" />
+	<string key="sendAttempt" value="Sending message" />
+	<string key="sendError" value="Server Error" />
+	<string key="sendSuccess" value="Message sent" />
+	<!--SETTINGS-->
+	<setting key="apiurl" value="https://smsapi.free-mobile.fr/sendmsg?" />
+	<setting key="internetupip" value="http://212.27.40.200" />
+	<setting key="maxMessageLength" value="160" />
+</settings>
