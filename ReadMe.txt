@@ -6,15 +6,16 @@ et de traduire les entrées 'string'. Si vous le faites vous pouvez m'envoyer un
 Je les inclus dans une prochaine version.
 
 ENGLISH ReadMe: This app is a way to make use of the free.fr SMS API.
+
+By editing the data/appSettings.xml file you can change the SMS target address.
+You never know you may be able to use this app for a different SMS API.
+
 free.fr is a French telephone company (https://www.free.fr/)
 It you go onto your free.fr account and enable the API you should be able to download your credentials.
 
 You need a user name : free choice up to 8 letters long
 You need a free.fr user: usually 8 digits
 You need an API code: given to you by free.fr as 14 alpha numeric characters
-
-By editing the data/appSettings.xml file you can change the SMS target address.
-You never know you may be able to use this app for a different SMS API.
 
 Basic usage:
 The App starts on the send window.
