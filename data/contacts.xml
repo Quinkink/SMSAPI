@@ -1,3 +1,4 @@
 <?xml version="1.0" ?>
 <smsapidata>
+  <contact id="0" name="default" user="12345678" code="AaBbCcDdEeFfGg" enable="True"/>
 </smsapidata>

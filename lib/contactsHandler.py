@@ -84,22 +84,22 @@ class XMLContactsHandler(object):
         """
         if self.debug:
             print('XMLContactsHandler: remove_from_list()')
+            print('Attempting to remove: ' + name)
         for elem in self.root:
             elemName = elem.get('name')
             if elemName != name:
-                print('XML name: ' + elemName)
-                break
+                print('not removing: ' + elemName)
             else:
                 self.root.remove(elem)
-        else:
-            if self.debug:
-                print(name + ' was removed from list')
-            i = 0
-            for elem in self.root:
-                elem.set('id', str(i))
-                i += 1
-            else:
-                return self.record()
+                if self.debug:
+                    print(name + ' was removed from list')
+
+        # REGENERATE CONSECUTIVE ID'S
+        i = 0
+        for elem in self.root:
+            elem.set('id', str(i))
+            i += 1
+        return self.record()
 
     def append_to_list(self, contact):
         """"""

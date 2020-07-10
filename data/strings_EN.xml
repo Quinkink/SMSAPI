@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<strings lang="EN" language="English">
+    <view frame="APP">
+        <!--APP STRINGS-->
+        <string key="applicationTitle" value="SMS" />
+        <string key="defaultStartView" value="Send"/>
+        <string key="messageTitleAbout" value="SMSAPI - About this app" />
+        <string key="messageAbout" value="HARD CODDED SORRY" />
+        <string key="messageTitleHelp" value="SMSAPI - Need help?" />
+        <string key="messageHelp" value="Phone a friend?" />
+        <string key="menuSend" value="Send" />
+        <string key="menuList" value="List" />
+        <string key="menuHelp" value="Help" />
+        <string key="menuAbout" value="About" />
+        <string key="menuQuit" value="Quit" />
+    </view>
+    <view frame="EDIT">
+        <!--EDIT STRINGS-->
+        <string key="welcomeMessageEdit" value="Add/edit contact" />
+        <string key="buttonSave" value="Save" />
+        <string key="buttonCancel" value="Cancel" />
+        <string key="buttonBack" value="Back" />
+        <string key="labelName" value="Name" />
+        <string key="labelUser" value="User" />
+        <string key="labelCode" value="Code" />
+        <string key="labelEnable" value="Enable" />
+        <string key="ContactNotAddedError" value="Add contact error" />
+        <string key="ContactAddedSuccess" value="Contact Added" />
+        <string key="ContactEditedSuccess" value="Contact Modified" />
+        <string key="ContactNameError" value="Name length max = " />
+        <string key="ContactUserError" value="User length must be " />
+        <string key="ContactCodeError" value="Code length must be " />
+    </view>
+    <view frame="LIST">
+        <!--LIST STRINGS-->
+        <string key="welcomeMessageList" value="List of contacts" />
+        <string key="labelEnabled" value="Enabled" />
+        <string key="labelDisabled" value="Disabled" />
+        <string key="buttonAdd" value="Add" />
+        <string key="buttonEdit" value="Edit" />
+        <string key="buttonDel" value="Delete" />
+        <string key="MessageTitleListSelectError" value="SMSAPI: No contact selected" />
+        <string key="MessageListSelectError" value="Please select a contact from one of the lists." />
+        <string key="MessageTitleConfirmDelete" value="SMSAPI - Confirm delete" />
+        <string key="MessageConfirmDelete" value="Are you sure you want to delete : " />
+    </view>
+    <view frame="SEND">
+        <!--SEND STRINGS-->
+        <string key="welcomeMessageSend" value="Send Message" />
+        <string key="spinboxDefault" value="Choose contact..." />
+        <string key="spinboxEmpty" value="Please add a contact to list" />
+        <string key="buttonSend" value="Send" />
+        <string key="buttonClear" value="Clear" />
+        <string key="buttonReset" value="Reset" />
+        <string key="emptyMessageError" value="Empty message" />
+        <string key="longMessageError" value="Message > max: " />
+        <string key="emptyContactError" value="Choose a contact" />
+        <string key="emptyContactListError" value="Please add a contact" />
+        <string key="enabledContactError" value="Contact not enabled" />
+        <string key="internetDownError" value="No internet" />
+        <string key="sendAttempt" value="Sending message" />
+        <string key="sendError" value="Server Error" />
+        <string key="sendSuccess" value="Message sent" />
+    </view>
+</strings>

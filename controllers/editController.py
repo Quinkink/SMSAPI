@@ -1,15 +1,10 @@
-# decompyle3 version 3.3.2
-# Python bytecode 3.8 (3413)
-# Decompiled from: Python 3.7.7 (default, May  6 2020, 11:45:54) [MSC v.1916 64 bit (AMD64)]
-# Embedded file name: C:\Users\Eleonore\Documents\PycharmProjects\SMSAPI\controllers\editController.py
-# Compiled at: 2020-07-01 16:30:57
-# Size of source mod 2**32: 8438 bytes
 """
 Created on 17 Mar 2020
 
 @author: Eleonore
 """
 import tkinter as tk
+
 
 class EditController(object):
     """
@@ -43,12 +38,13 @@ class EditController(object):
         self.view.name.insert(tk.END, self.model.contact['name'])
         self.view.user.insert(tk.END, self.model.contact['user'])
         self.view.code.insert(tk.END, self.model.contact['code'])
-        self.view.enable.config(text=(self.model.strings['labelEnable']), state=(tk.NORMAL),
-          onvalue='True',
-          offvalue='False')
+        self.view.enable.config(text=(self.model.strings['labelEnable']),
+                                state=tk.NORMAL,
+                                onvalue='True',
+                                offvalue='False')
         self.view.enableVar.set(self.model.contact['enable'])
-        self.view.cancelButton.config(text=(self.model.strings['buttonCancel']), command=(self.cancel))
-        self.view.saveButton.config(text=(self.model.strings['buttonSave']), command=(self.save))
+        self.view.cancelButton.config(text=(self.model.strings['buttonCancel']), command=self.cancel)
+        self.view.saveButton.config(text=(self.model.strings['buttonSave']), command=self.save)
         self.application_feedback(self.model.strings['welcomeMessageEdit'])
 
     def save(self):
@@ -73,11 +69,11 @@ class EditController(object):
         elif not self.validate_code():
             return_message = self.model.strings['ContactCodeError'] + self.model.settings['defaultCodeLength']
         else:
-            self.view.saveButton.config(state=(tk.DISABLED))
-            self.view.name.config(state=(tk.DISABLED))
-            self.view.user.config(state=(tk.DISABLED))
-            self.view.code.config(state=(tk.DISABLED))
-            self.view.enable.config(state=(tk.DISABLED))
+            self.view.saveButton.config(state=tk.DISABLED)
+            self.view.name.config(state=tk.DISABLED)
+            self.view.user.config(state=tk.DISABLED)
+            self.view.code.config(state=tk.DISABLED)
+            self.view.enable.config(state=tk.DISABLED)
             if not self.add_contact_to_xml():
                 return_message = self.model.strings['ContactNotAddedError']
             else:
@@ -86,7 +82,7 @@ class EditController(object):
                     return_message = self.model.strings['ContactEditedSuccess']
                 else:
                     return_message = self.model.strings['ContactAddedSuccess']
-                self.view.cancelButton.config(text=(self.model.strings['buttonBack']), command=(self.cancel))
+                self.view.cancelButton.config(text=(self.model.strings['buttonBack']), command=self.cancel)
                 self.application_feedback(return_message, feedback_background)
         self.application_feedback(return_message, feedback_background)
 
@@ -101,11 +97,11 @@ class EditController(object):
         if self.debug:
             print('EditController:application_feedback()')
             print('feedback : ' + feedback)
-        self.view.feedback.config(state=(tk.NORMAL))
+        self.view.feedback.config(state=tk.NORMAL)
         self.view.feedback.delete(1.0, tk.END)
         self.view.feedback.config(background=bgcolour, foreground=fgcolour)
         self.view.feedback.insert(tk.END, feedback)
-        self.view.feedback.config(state=(tk.DISABLED))
+        self.view.feedback.config(state=tk.DISABLED)
         return True
 
     def add_contact_to_xml(self):
@@ -128,11 +124,11 @@ class EditController(object):
         """
         if self.debug:
             print('EditController:cancel()')
-        self.view.saveButton.config(state=(tk.NORMAL))
-        self.view.name.config(state=(tk.NORMAL))
-        self.view.user.config(state=(tk.NORMAL))
-        self.view.code.config(state=(tk.NORMAL))
-        self.view.enable.config(state=(tk.NORMAL))
+        self.view.saveButton.config(state=tk.NORMAL)
+        self.view.name.config(state=tk.NORMAL)
+        self.view.user.config(state=tk.NORMAL)
+        self.view.code.config(state=tk.NORMAL)
+        self.view.enable.config(state=tk.NORMAL)
         self.application_feedback(self.model.strings['welcomeMessageEdit'])
         self.view.name.delete(1.0, tk.END)
         self.view.user.delete(1.0, tk.END)

@@ -5,7 +5,7 @@
 from cx_Freeze import setup, Executable
 import sys
 
-current_version = '1.003'
+current_version = '1.004'
 status = 'BETA'
 
 # MSI shortcut table

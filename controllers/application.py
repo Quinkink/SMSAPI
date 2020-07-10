@@ -6,17 +6,22 @@ Created on 17 Mar 2020
 import tkinter as tk
 from tkinter import messagebox
 import lib.tkErrorCatcher as tec
-from controllers.sendController import SendController
-from controllers.editController import EditController
-from controllers.listController import ListController
+# APP MVC
 from models.appModel import AppModel
-from models.sendModel import SendModel
-from models.editModel import EditModel
-from models.listModel import ListModel
 from views.appView import AppView
+# SEND MVC
+from models.sendModel import SendModel
 from views.sendView import SendView
+from controllers.sendController import SendController
+# EDIT MVC
+from models.editModel import EditModel
 from views.editView import EditView
+from controllers.editController import EditController
+# LIST MVC
+from models.listModel import ListModel
 from views.listView import ListView
+from controllers.listController import ListController
+# OTHER IMPORTS
 import lib.functionEngine as functions
 
 
@@ -26,35 +31,32 @@ class Application(object):
     Args: void
     """
 
-    def __init__(self, settings, debug):
+    def __init__(self, settings):
         """
         Init for Application
-        :param debug: (boolean) debugger is on = True. This is set to False for production
+        :param settings: (string) settings xml filename
         """
-        self.debug = debug
+        self.appModel = AppModel(settings)
+        self.debug = self.appModel.debug
         if self.debug:
             print('Application: __init__')
         tk.CallWrapper = tec.TkErrorCatcher
-        self.appModel = AppModel(settings, debug)
-        self.appView = AppView(debug)
+        self.appView = AppView(self.debug)
         self.appView.root.protocol('WM_DELETE_WINDOW', self.quit)
         self.appView.root.geometry(self.appModel.settings['geometryAppView'])
         self.visibleView = self.appModel.strings['defaultStartView']
         self.lastView = None
         self.app_mvc = {'Send': {'model': SendModel,  'view': SendView,
                                  'controller': SendController,
-                                 'geometry': self.appModel.settings['geometrySendView'],
-                                 'filename': self.appModel.settings['filenameSendModel']},
+                                 'geometry': self.appModel.settings['geometrySendView']},
                         'Edit': {'model': EditModel,
                                  'view': EditView,
                                  'controller': EditController,
-                                 'geometry': self.appModel.settings['geometryEditView'],
-                                 'filename': self.appModel.settings['filenameEditModel']},
+                                 'geometry': self.appModel.settings['geometryEditView']},
                         'List': {'model': ListModel,
                                  'view': ListView,
                                  'controller': ListController,
-                                 'geometry': self.appModel.settings['geometryListView'],
-                                 'filename': self.appModel.settings['filenameListModel']}}
+                                 'geometry': self.appModel.settings['geometryListView']}}
         self.model = None
         self.controller = None
         self.views = {}
@@ -85,7 +87,9 @@ class Application(object):
         if self.debug:
             print('Application : show_view(' + mvc + ')')
             print('contact_name : ' + contact_name)
-        filenames = {'contacts': self.appModel.settings['filenameContacts'],  'settings': self.app_mvc[mvc]['filename']}
+        filenames = {'settings': self.appModel.filenameSettings,
+                     'contacts': self.appModel.filenameContacts,
+                     'language': self.appModel.filenameLanguage}
         self.model = self.app_mvc[mvc]['model'](filenames, self.debug)
         if contact_name != '':
             self.model.load_contact(contact_name)

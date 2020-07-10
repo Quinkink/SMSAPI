@@ -6,9 +6,8 @@ Created on 17 Mar 2020
 
 from controllers import application
 
-filename = 'appStrings.xml'
-debug = True
+filename = 'settings.xml'
 
 if __name__ == '__main__':
-    app = application.Application(filename, debug)
+    app = application.Application(filename)
     app.run()

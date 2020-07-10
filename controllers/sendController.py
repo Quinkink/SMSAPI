@@ -59,9 +59,14 @@ class SendController(object):
             self.view.message.config(state=tk.DISABLED)
             self.view.sendButton.config(state=tk.DISABLED)
             self.view.clearButton.config(text=(self.model.strings['buttonReset']), command=self.clear)
+            if self.debug:
+                print('selected contact: ' + self.view.contacts.get())
             values = {'msg': self.model.message,
                       'pass': self.model.xml_contacts.get_attribute('contact', self.view.contacts.get(), 'code'),
                       'user': self.model.xml_contacts.get_attribute('contact', self.view.contacts.get(), 'user')}
+            if self.debug:
+                print('Values before send')
+                print(values)
             pool = ThreadPool(processes=1)
             async_result = pool.apply_async(functions.send, (self.model.settings['apiurl'], values, self.debug))
             self.application_feedback(self.model.strings['sendAttempt'], 'GREEN')
@@ -113,7 +118,7 @@ class SendController(object):
     def internet_up(self):
         if self.debug:
             print('InternetUp()')
-            print('test url : ' + str(self.model.settings['internetupip']))
+            print('tested with url : ' + str(self.model.settings['internetupip']))
         req = urllib.request.Request(self.model.settings['internetupip'])
         try:
             response = urllib.request.urlopen(req, timeout=1)
@@ -132,7 +137,7 @@ class SendController(object):
         :return: boolean
         """
         if self.debug:
-            print('SendController:validate_contact()')
+            print('SendController: validate_contact()')
         validation = True
         if self.view.contacts.get() == self.model.strings['spinboxEmpty']:
             self.messageValidError = self.model.strings['emptyContactListError']
@@ -153,7 +158,7 @@ class SendController(object):
         :return: boolean
         """
         if self.debug:
-            print('SendController:validate_message()')
+            print('SendController: validate_message()')
         self.model.message = self.view.message.get(1.0, tk.END + '-1c')
         if self.debug:
             print('message : [' + self.model.message + ']')
@@ -163,5 +168,5 @@ class SendController(object):
             self.messageValidError = self.model.strings['emptyMessageError']
         elif len(self.model.message) > int(self.model.settings['maxMessageLength']):
             validation = False
-            self.messageValidError = self.model.strings['longMessageError']
+            self.messageValidError = self.model.strings['longMessageError'] + self.model.settings['maxMessageLength']
         return validation

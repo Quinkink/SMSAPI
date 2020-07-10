@@ -1,18 +1,10 @@
-# decompyle3 version 3.3.2
-# Python bytecode 3.8 (3413)
-# Decompiled from: Python 3.7.7 (default, May  6 2020, 11:45:54) [MSC v.1916 64 bit (AMD64)]
-# Embedded file name: C:\Users\Eleonore\Documents\PycharmProjects\SMSAPI\models\editModel.py
-# Compiled at: 2020-07-01 16:30:57
-# Size of source mod 2**32: 1346 bytes
 """
 Created on 17 Mar 2020
 
 @author: Eleonore
 """
 from models.baseModel import BaseModel
-from lib import contactsHandler
-from lib import settingsHandler
-import lib.functionEngine as functions
+
 
 class EditModel(BaseModel):
     """''"""
@@ -22,11 +14,13 @@ class EditModel(BaseModel):
         self.debug = debug
         if self.debug:
             print('EditModel: __init__')
-        self.contact = {'id':'', 
-         'name':'', 
-         'user':'', 
-         'code':'', 
-         'enable':self.settings['defaultContactEnable']}
+        self.contact = {'id': '',
+                        'name': '',
+                        'user': '',
+                        'code': '',
+                        'enable': self.settings['defaultContactEnable']}
+
+        self.load_xml_strings('EDIT')
 
     def load_contact(self, contact_name):
         if self.debug:
