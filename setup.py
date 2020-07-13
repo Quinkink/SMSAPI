@@ -5,7 +5,7 @@
 from cx_Freeze import setup, Executable
 import sys
 
-current_version = '1.004'
+current_version = '1.005'
 status = 'BETA'
 
 # MSI shortcut table
@@ -60,7 +60,7 @@ msi_data = {"Shortcut": shortcut_table}
 # Dependencies are automatically detected, but it might need
 # fine tuning.
 build_Options = dict(packages=["models", "controllers", "views", "lib"],
-                     include_files=["data", "src", "ReadMe.txt", "LICENSE"],
+                     include_files=["data", "src", "ReadMe.txt"],
                      excludes=["tcl", "asyncio", "concurrent", "ctypes", "distutils", "html",
                                "lib2to3", "logging", "test", "unittest", "xmlrpc"],
                      add_to_path=False,
@@ -71,11 +71,9 @@ build_Options = dict(packages=["models", "controllers", "views", "lib"],
 buildMSI_Options = dict(install_icon="src/app.ico",
                         target_name="SMSAPI-" + current_version,
                         initial_target_dir=r'[ProgramFilesFolder]\%s' % "SMSAPI",
-                        product_code="SMSAPI-" + current_version,
+                        product_code="{58437303-2b2d-4c5c-84ff-5a8d77222bde}",
                         upgrade_code="{59e50bd5-2592-43dd-abbe-50422457e001}",
-                        all_users=False,
                         data=msi_data)
-# product_code = "1125-4468-6442-5693"
 
 base = 'Win32GUI' if sys.platform == 'win32' else None
 
@@ -84,7 +82,7 @@ executables = [
                base=base,
                targetName='smsapi',
                icon="src/app.ico",
-               copyright="Copyright (c) 2020")
+               copyright="GNU/GPL")
 ]
 
 classifiers = [
@@ -97,7 +95,7 @@ classifiers = [
     'Topic :: Communications :: SMS text'
 ]
 
-setup(name='SMSAPI - send text message from desktop',
+setup(name='SMSAPI',
       version=current_version,
       author='Mark LEWIS',
       author_email='kingston.lewis@free.fr',

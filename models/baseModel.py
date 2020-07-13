@@ -6,13 +6,17 @@ Created on 17 Mar 2020
 from lib import contactsHandler
 from lib import settingsHandler
 from lib import stringsHandler
-import lib.functionEngine as functions
 
 
 class BaseModel:
     """
     """
     def __init__(self, filenames, debug):
+        """
+
+        :param filenames: (dictionary) contains XML file names
+        :param debug:
+        """
         self.debug = debug
         if self.debug:
             print('BaseModel: __init__')

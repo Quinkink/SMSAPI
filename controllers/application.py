@@ -36,7 +36,9 @@ class Application(object):
         Init for Application
         :param settings: (string) settings xml filename
         """
-        self.appModel = AppModel(settings)
+        self.appModel = AppModel({'settings': functions.find_data_file(settings, 'data'),
+                                  'contacts': None,
+                                  'language': None})
         self.debug = self.appModel.debug
         if self.debug:
             print('Application: __init__')

@@ -4,10 +4,6 @@
 	<setting key="debug" value="False" />
 	<setting key="filenameContacts" value="contacts.xml" />
 	<setting key="filenameLanguage" value="strings_EN.xml" />
-	<setting key="geometryAppView" value="+300+160"/>
-	<setting key="geometrySendView" value="200x212"/>
-	<setting key="geometryEditView" value="202x152"/>
-	<setting key="geometryListView" value="214x226"/>
 	<!--SEND SETTINGS-->
 	<setting key="apiurl" value="https://smsapi.free-mobile.fr/sendmsg?" />
 	<setting key="internetupip" value="http://212.27.40.200" />
@@ -19,4 +15,9 @@
 	<setting key="defaultCodeLength" value="14" />
 	<!--LIST SETTINGS-->
 	<!--NONE-->
+	<!--VIEW SETTINGS-->
+	<setting key="geometryAppView" value="+300+160"/>
+	<setting key="geometrySendView" value="200x212"/>
+	<setting key="geometryEditView" value="202x152"/>
+	<setting key="geometryListView" value="214x226"/>
 </settings>

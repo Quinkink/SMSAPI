@@ -7,9 +7,14 @@ from models.baseModel import BaseModel
 
 
 class SendModel(BaseModel):
-    """''"""
+    """"""
 
     def __init__(self, filenames, debug):
+        """
+
+        :param filenames: (dictionary) contains XML file names
+        :param debug:
+        """
         super(SendModel, self).__init__(filenames, debug)
         self.debug = debug
         if self.debug:
