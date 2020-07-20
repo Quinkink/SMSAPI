@@ -140,7 +140,9 @@ class Application(object):
         if self.debug:
             print('Application: about()')
         self.message_dialogue_information_feedback(self.appModel.strings['messageTitleAbout'],
-                                                   'Codded by Mark for a little fun'
+                                                   'Application : ' + self.appModel.strings['applicationTitle'] +
+                                                   '\nVersion : ' + self.appModel.settings['version'] +
+                                                   '\nCodded by Mark for a little fun'
                                                    '\non Github as Quinkink'
                                                    '\nkingston.lewis@free.fr')
 
