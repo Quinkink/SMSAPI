@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <settings>
 	<!--APP SETTINGS-->
-	<setting key="version" value="1.006" />
+	<setting key="version" value="1.007" />
 	<setting key="debug" value="False" />
 	<setting key="filenameContacts" value="contacts.xml" />
 	<setting key="filenameLanguage" value="strings_EN.xml" />

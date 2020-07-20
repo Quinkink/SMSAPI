@@ -5,7 +5,7 @@
 from cx_Freeze import setup, Executable
 import sys
 
-current_version = '1.006'
+current_version = '1.007'
 # ALSO IN settings.xml
 status = 'BETA'
 
@@ -74,7 +74,6 @@ buildMSI_Options = dict(install_icon="src/app.ico",
                         initial_target_dir=r'[ProgramFilesFolder]\%s' % "SMSAPI",
                         product_code="{58437303-2b2d-4c5c-84ff-5a8d77222bde}",
                         upgrade_code="{59e50bd5-2592-43dd-abbe-50422457e001}",
-                        company_name="https://github.com/Quinkink/",
                         data=msi_data)
 
 base = 'Win32GUI' if sys.platform == 'win32' else None
